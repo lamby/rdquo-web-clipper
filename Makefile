@@ -1,5 +1,5 @@
 SRC = manifest.json icons js
-DIST = myquotes-chrome-extension.zip
+DIST = rdquo-chrome-extension.zip
 
 all: test $(DIST)
 	@echo https://chrome.google.com/webstore/developer/dashboard

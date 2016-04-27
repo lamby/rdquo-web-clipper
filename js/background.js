@@ -35,7 +35,7 @@ function savetext(info, tab)
   };
 
   chrome.tabs.create({
-    "url": "http://myquotes.chris-lamb.co.uk/add?" + param(data)
+    "url": "http://rdquo.com/add?" + param(data)
   });
 }
 
@@ -46,7 +46,7 @@ for (var i = 0; i < contexts.length; i++)
   var context = contexts[i];
 
   chrome.contextMenus.create({
-    "title": "Add quote on myquotes",
+    "title": "Add quote to rdquo.com...",
     "contexts": [context],
     "onclick": savetext
   });

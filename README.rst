@@ -1,7 +1,7 @@
-myquotes Chrome extension
-"""""""""""""""""""""""""
+rdquo.com Chrome extension
+""""""""""""""""""""""""""
 
-A Chrome extension to send text to myquotes.
+A Chrome extension to send text to rdquo.com.
 
 Installation from Git
 =====================
