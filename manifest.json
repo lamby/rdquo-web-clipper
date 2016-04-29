@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
 
-  "name": "rdquo.com clipper",
-  "description": "Send quote to rdquo.com",
+  "name": "Rdquo Web Clipper",
+  "description": "Use the Rdquo extension to save things you see on the web into your Rdquo account.",
   "version": "0.0.2",
 
   "background": {
