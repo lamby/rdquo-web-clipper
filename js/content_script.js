@@ -10,3 +10,5 @@ document.addEventListener('mouseup', function (event) {
     'data': sel
   }, function(response) {});
 });
+
+document.documentElement.setAttribute('data-rdquo-web-clipper-installed', true);
