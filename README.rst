@@ -1,5 +1,5 @@
-rdquo.com Chrome extension
-""""""""""""""""""""""""""
+rdquo.com Web Clipper
+"""""""""""""""""""""
 
 A Chrome extension to send text to rdquo.com.
 

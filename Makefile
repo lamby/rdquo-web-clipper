@@ -1,5 +1,5 @@
 SRC = manifest.json icons js
-DIST = rdquo-chrome-extension.zip
+DIST = rdquo-web-clipper.zip
 
 all: test $(DIST)
 
