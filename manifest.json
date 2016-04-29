@@ -3,7 +3,7 @@
 
   "name": "Rdquo Web Clipper",
   "description": "Use the Rdquo extension to save things you see on the web into your Rdquo account.",
-  "version": "0.0.3",
+  "version": "0.0.4",
 
   "background": {
     "scripts": ["js/background.js"]
