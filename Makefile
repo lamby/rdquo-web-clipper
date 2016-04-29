@@ -2,8 +2,6 @@ SRC = manifest.json icons js
 DIST = rdquo-chrome-extension.zip
 
 all: test $(DIST)
-	@echo https://chrome.google.com/webstore/developer/dashboard
-	@echo `pwd`
 
 clean:
 	rm -f $(DIST)
