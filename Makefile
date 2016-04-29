@@ -6,7 +6,7 @@ all: test $(DIST)
 	@echo `pwd`
 
 clean:
-	rm -f $(DIST) icons/icon*.png
+	rm -f $(DIST)
 
 test:
 	! find js -type f -name '*.js' -print0 | xargs -0r grep console.log
@@ -16,7 +16,9 @@ icons: icons/icon16.png icons/icon48.png icons/icon128.png
 $(DIST): clean $(ICONS)
 	zip -r $@ $(SRC)
 
-icons/icon%.png: icons/original.png
+icons/icon%.png: icons/original.png FORCE
 	convert $< -resize $*x $@
 
-.PHONY: all clean test icons
+FORCE:
+
+.PHONY: all clean test
