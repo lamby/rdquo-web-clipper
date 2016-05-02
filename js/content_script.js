@@ -11,4 +11,6 @@ document.addEventListener('mouseup', function (event) {
   }, function(response) {});
 });
 
-document.documentElement.setAttribute('data-rdquo-web-clipper-installed', true);
+if (window.location.hostname.indexOf('rdquo.com') === 0) {
+  document.documentElement.setAttribute('data-rdquo-web-clipper-installed', true);
+}
