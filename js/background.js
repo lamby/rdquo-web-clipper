@@ -1,20 +1,3 @@
-var seltext = null;
-
-chrome.extension.onRequest.addListener(function(request, sender, sendResponse)
-{
-  switch (request.message)
-  {
-    case 'setText':
-      window.seltext = request.data
-      break;
-    default:
-      sendResponse({
-        data: "Invalid arguments"
-      });
-      break;
-  }
-});
-
 var param = function (data) {
   var xs = [];
 
@@ -52,7 +35,7 @@ function savetext(info, tab)
     "source": '',
     "title": tab.title,
     "url": tab.url,
-    "content": window.seltext
+    "content": info.selectionText
   };
 
   POST('http://rdquo.com/add/clipper', data);
