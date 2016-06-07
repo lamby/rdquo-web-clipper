@@ -1,13 +1,3 @@
-var param = function (data) {
-  var xs = [];
-
-  for (var x in data) {
-     xs.push(encodeURIComponent(x) + "=" + encodeURIComponent(data[x]));
-  }
-
-  return xs.join("&");
-};
-
 // http://stackoverflow.com/questions/7387217/chrome-extension-development-post-to-new-tab/23687543#23687543
 function POST(url, data)
 {
