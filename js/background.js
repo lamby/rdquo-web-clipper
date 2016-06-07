@@ -29,27 +29,17 @@ function POST(url, data)
   });
 }
 
-function savetext(info, tab)
-{
-  var data = {
-    "source": '',
-    "title": tab.title,
-    "url": tab.url,
-    "content": info.selectionText
-  };
+chrome.contextMenus.create({
+  "title": "Add quote to rdquo.com...",
+  "contexts": ["selection"],
+  "onclick": function(info, tab) {
+    var data = {
+      "source": '',
+      "title": tab.title,
+      "url": tab.url,
+      "content": info.selectionText
+    };
 
-  POST('http://rdquo.com/add/clipper', data);
-}
-
-var contexts = ["selection"];
-
-for (var i = 0; i < contexts.length; i++)
-{
-  var context = contexts[i];
-
-  chrome.contextMenus.create({
-    "title": "Add quote to rdquo.com...",
-    "contexts": [context],
-    "onclick": savetext
-  });
-}
+    POST('http://rdquo.com/add/clipper', data);
+  }
+});
