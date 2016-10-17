@@ -23,7 +23,7 @@ chrome.contextMenus.create({
   "title": "Add quote to rdquo.com...",
   "contexts": ["selection"],
   "onclick": function(info, tab) {
-    POST('http://rdquo.com/add/clipper', {
+    POST('https://chris-lamb.co.uk/admin/quotes/clipper', {
       "source": '',
       "title": tab.title,
       "url": tab.url,
