@@ -5,6 +5,7 @@ var onMessageHandler = function(message){
   var form = document.createElement("form");
   form.setAttribute("method", "post");
   form.setAttribute("action", message.url);
+  form.setAttribute("accept-charset", "UTF-8");
 
   for (var key in message.data) {
     var hiddenField = document.createElement("input");
