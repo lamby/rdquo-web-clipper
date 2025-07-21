@@ -19,15 +19,29 @@ function POST(url, data)
   });
 }
 
+var urls = new Map();
+
 chrome.contextMenus.create({
   "title": "Add quote...",
   "contexts": ["selection"],
   "onclick": function(info, tab) {
+
+    var url = tab.url.split("#")[0];
+    url = urls.get(url) ? urls.get(url) : url;
+
     POST('https://chris-lamb.co.uk/admin/quotes/clipper', {
       "source": '',
       "title": tab.title,
-      "url": tab.url,
+      "url": url,
       "content": info.selectionText
     });
   }
+});
+
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+  if (request.type == "override-url") {
+    urls.set(request.options.original.split("#")[0], request.options.override);
+  }
+
+  sendResponse();
 });

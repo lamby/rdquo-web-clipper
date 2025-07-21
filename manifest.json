@@ -12,8 +12,7 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["js/content_script.js"],
-      "run_at": "document_start"
+      "js": ["js/content_script.js"]
     }
   ],
   "icons": {
