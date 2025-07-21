@@ -21,21 +21,24 @@ function POST(url, data)
 
 var urls = new Map();
 
-chrome.contextMenus.create({
-  "title": "Add quote...",
-  "contexts": ["selection"],
-  "onclick": function(info, tab) {
+chrome.runtime.onInstalled.addListener(async () => {
+  chrome.contextMenus.create({
+    "title": "Add quote...",
+    "id": "rdquo",
+    "contexts": ["selection"]
+  });
+});
 
-    var url = tab.url.split("#")[0];
-    url = urls.get(url) ? urls.get(url) : url;
+chrome.contextMenus.onClicked.addListener((item, tab) => {
+  var url = tab.url.split("#")[0];
+  url = urls.get(url) ? urls.get(url) : url;
 
-    POST('https://chris-lamb.co.uk/admin/quotes/clipper', {
-      "source": '',
-      "title": tab.title,
-      "url": url,
-      "content": info.selectionText
-    });
-  }
+  POST('https://chris-lamb.co.uk/admin/quotes/clipper', {
+    "source": '',
+    "title": tab.title,
+    "url": url,
+    "content": item.selectionText
+  });
 });
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
